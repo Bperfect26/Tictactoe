@@ -1,2 +1,2 @@
 # Tictactoe
-Lab mini project
+Lab mini project 
