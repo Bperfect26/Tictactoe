@@ -37,6 +37,24 @@ void printBoard(char board[MAX_SIZE][MAX_SIZE], int size) {
     }
     printf("\n");
 }
+void playerMove(char board[MAX_SIZE][MAX_SIZE], int size, char player) {
+    int row, col;
+    int valid = 0;
+    while (!valid) {
+        printf("Player %c - Enter row (0-%d): ", player, size - 1);
+        scanf("%d", &row);
+        printf("Player %c - Enter column (0-%d): ", player, size - 1);
+        scanf("%d", &col);
+        if (row < 0 || row >= size || col < 0 || col >= size) {
+            printf("Invalid! Coordinates out of bounds. Try again.\n");
+        } else if (board[row][col] != ' ') {
+            printf("Invalid! Cell is already taken. Try again.\n");
+        } else {
+            board[row][col] = player;
+            valid = 1;
+        }
+    }
+}
 int main(){
 char board[3][3];
 initializeBoard(board,3);
