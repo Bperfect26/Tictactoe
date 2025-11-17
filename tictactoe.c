@@ -13,15 +13,33 @@ void initializeBoard(char board[MAX_SIZE][MAX_SIZE], int size) {
 void printBoard(char board[MAX_SIZE][MAX_SIZE], int size) {
     printf("\n   ");
     for (int col = 0; col < size; col++) {
-        printf("%2d ", col);
+        printf("  %d ", col);
     }
     printf("\n");
+    
     for (int row = 0; row < size; row++) {
-        printf("%2d ", row); 
+        printf("%2d ", row);
+        
+        // Print the cells with vertical separators
         for (int col = 0; col < size; col++) {
             printf(" %c ", board[row][col]);
+            if (col < size - 1) {
+                printf("|");
+            }
         }
         printf("\n");
+        
+        // Print horizontal separators (except after last row)
+        if (row < size - 1) {
+            printf("   ");
+            for (int col = 0; col < size; col++) {
+                printf("---");
+                if (col < size - 1) {
+                    printf("+");
+                }
+            }
+            printf("\n");
+        }
     }
     printf("\n");
 }
