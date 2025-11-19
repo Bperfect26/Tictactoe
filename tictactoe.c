@@ -55,6 +55,10 @@ void playerMove(char board[MAX_SIZE][MAX_SIZE], int size, char player) {
         }
     }
 }
+void winCheck(){
+
+    return 1;
+}
 int main(){
 char board[3][3];
 initializeBoard(board,3);
